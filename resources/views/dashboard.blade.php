@@ -14,11 +14,11 @@
 }
     .overview-title {
         font-weight: 700;
-        color: #25324b;
+        color: #0059ff;
     }
 
     .overview-subtitle {
-        color: #748094;
+        color: #aeb6c3;
     }
 
     .summary-card {

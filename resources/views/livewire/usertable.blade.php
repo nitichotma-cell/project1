@@ -248,6 +248,9 @@
                                         wire:model="image"
                                         accept="image/*">
                                     <div class="form-text">รองรับไฟล์รูปภาพ ขนาดไม่เกิน 2 MB</div>
+                                    <div class="form-text" wire:loading wire:target="image" role="status">
+                                        กำลังอัปโหลดรูปสินค้า กรุณารอจนเสร็จก่อนกดบันทึก
+                                    </div>
 
                                     @error('image')
                                         <div class="text-danger small mt-1">{{ $message }}</div>
@@ -266,9 +269,16 @@
                                         type="submit"
                                         class="btn btn-primary px-4"
                                         wire:loading.attr="disabled"
-                                        wire:target="save,image">
-                                        <span wire:loading.remove wire:target="save">บันทึกสินค้า</span>
-                                        <span wire:loading wire:target="save">กำลังบันทึก...</span>
+                                        wire:target="image,save,update">
+                                        <span wire:loading.remove wire:target="image,save,update">
+                                            {{ $editingProductId ? 'บันทึกการแก้ไข' : 'บันทึกสินค้า' }}
+                                        </span>
+                                        <span wire:loading wire:target="image">
+                                            กำลังอัปโหลดรูป...
+                                        </span>
+                                        <span wire:loading wire:target="save,update">
+                                            กำลังบันทึก...
+                                        </span>
                                     </button>
                                 </div>
                             </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ร้านค้าของเรา</title>
+    <title>ร้านค้าของอ้อด</title>
 
     <style>
         * { box-sizing: border-box; }
